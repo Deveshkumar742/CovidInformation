@@ -1,0 +1,23 @@
+<div style=" border: 1px solid #1976d2;;margin-left:20px ; ">
+  <P style="font-size: xx-large;margin-left: 3px;">State: {{state.stateName}}</P>
+  <table class="table table-striped" *ngIf="state">
+    <thead>
+      <tr>
+        <th>District Name</th>
+        <th>Total Cases</th>
+        <th>Active Cases</th>
+        <th>Recovered Cases</th>
+        <th>Deceased</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let district of state.districtList">
+        <td>{{ district.districtName }}</td>
+        <td>{{ district.totalCases }}</td>
+        <td>{{ district.active }}</td>
+        <td>{{ district.recovered }}</td>
+        <td>{{ district.deceased }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

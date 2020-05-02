@@ -1,0 +1,36 @@
+<app-portal-header></app-portal-header>
+<div class="container-fluid custum-bg">
+  <div class="container">
+    <div class="custom-card" style="margin-top:10%;">
+      <div class="custom-card-header pl-4 pt-2">
+        <h3>Sign In</h3>
+      </div>
+      <div class="card-body mb-4">
+        <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-at"></i></span>
+            </div>
+            <input class="form-control email" placeholder="User Name" formControlName="username" required>
+            <div *ngIf="loginForm.get('username').invalid">{{getErrorMessage()}}</div>
+          </div>
+          <div class="input-group form-group mt-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="password" class="form-control password" placeholder="Password" formControlName="password"
+              required>
+            <div *ngIf="loginForm.get('password').invalid">{{getErrorMessage()}}</div>
+          </div>
+          <div class="form-group mt-4">
+            <button type="button" class="btn float-right login_btn" style="margin:5px;" color="accent"
+              (click)="resetForm()" [disabled]="!loginForm.valid">Reset</button>
+            <button type="submit" class="btn float-right login_btn" style="margin:5px;" color="accent"
+              [disabled]="!loginForm.valid">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-portal-footer></app-portal-footer>

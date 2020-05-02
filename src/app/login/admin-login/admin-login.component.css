@@ -1,0 +1,90 @@
+mat-card-title {
+  color: #3f51b5;
+  font-size: 24px;
+}
+
+mat-card-header {
+  padding: 5px;
+  border-bottom: 3px solid #ff4081;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.field-container {
+  margin: 0.5em;
+}
+
+.form-div {
+  padding: 25px 25em;
+  justify-content: center
+}
+
+p {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 50%;
+  background-color: #ffeeee;
+  border: 2px solid red;
+  border-radius: 8px;
+  font-size: 16px;
+  color: red;
+}
+
+.custom-card {
+  height: 280px;
+  width: 400px;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+    margin-left: 31%;
+    margin-top: 18% !important;
+}
+
+.custom-card-header h3 {
+  color: white;
+}
+
+.login_btn {
+  color: black;
+  background-color: #FFC312;
+  width: 100px;
+}
+
+.login_btn:hover {
+  color: black;
+  background-color: white;
+}
+
+.social_icon {
+  position: absolute;
+  right: 20px;
+  top: -45px;
+}
+
+.input-group-prepend span {
+  width: 50px;
+  background-color: #FFC312;
+  color: black;
+  border: 0 !important;
+}
+
+input:focus {
+  outline: 0 0 0 0 !important;
+  box-shadow: 0 0 0 0 !important;
+
+}
+
+/* .custum-bg {
+  background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+  background-size: cover;
+  background-repeat: repeat-y;
+  height: 100%;
+  font-family: 'Numans', sans-serif;
+}
+html,body{
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    }  */

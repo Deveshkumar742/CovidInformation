@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { PrecautionComponent } from 'src/app/precaution/precaution.component';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './core/approuting/app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({

@@ -1,0 +1,129 @@
+<div class="card">
+    <div class="card-body">
+      <form novalidate (ngSubmit)="save(userForm.value)" [formGroup]="newsForm">
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="txtTitle">
+            Title
+          </label>
+          <div class="col-md-8">
+            <input
+              class="form-control"
+              id="txtTitle"
+              type="text"
+              placeholder="Enter Title"
+              formControlName="title"
+              [ngClass]="{
+                'is-invalid':
+                  (userForm.get('title').touched || userForm.get('title').dirty) &&
+                  !userForm.get('title').valid
+              }"
+            />
+            <span class="invalid-feedback">
+              <span *ngIf="userForm.get('title').errors?.required">
+                Please Enter News Title.
+              </span>
+              <span *ngIf="userForm.get('title').errors?.minlength">
+                Title must be longer than 5 characters.
+              </span>
+            </span>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="textDescription">
+            Description
+          </label>
+          <div class="col-md-8">
+            <input
+              class="form-control"
+              id="textDescription"
+              type="text"
+              placeholder="Enter Description"
+              formControlName="description"
+              [ngClass]="{
+                'is-invalid':
+                  (userForm.controls.description.touched ||
+                    userForm.controls.description.dirty) &&
+                  !userForm.controls.description.valid
+              }"
+            />
+            <span class="invalid-feedback">
+              <span *ngIf="userForm.controls.description.errors?.required">
+                Please Enter News Description.
+              </span>
+            </span>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="textSummary">
+            Summary
+          </label>
+          <div class="col-md-8">
+            <input
+              class="form-control"
+              id="textSummary"
+              type="text"
+              placeholder="Enter phone number"
+              formControlName="summary"
+              [ngClass]="{
+                'is-invalid':
+                  (userForm.get('summary').touched ||
+                    userForm.get('summary').dirty) &&
+                  !userForm.get('summary').valid
+              }"
+            />
+            <span class="invalid-feedback">
+              <span *ngIf="userForm.get('summary').errors?.required">
+                Please Enter News Summary.
+              </span>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label" for="textFullNews">
+            Full News
+          </label>
+          <div class="col-md-8">
+            <input
+              class="form-control"
+              id="textFullNews"
+              type="text"
+              placeholder="Enter phone number"
+              formControlName="fullNews"
+              [ngClass]="{
+                'is-invalid':
+                  (userForm.get('fullNews').touched ||
+                    userForm.get('fullNews').dirty) &&
+                  !userForm.get('fullNews').valid
+              }"
+            />
+            <span class="invalid-feedback">
+              <span *ngIf="userForm.get('fullNews').errors?.required">
+                Please Enter Full News.
+              </span>
+            </span>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <div class="offset-md-2 col-md-4">
+            <button
+              mat-flat-button color="accent"
+              type="submit"
+              style="width:80px"
+              [title]="
+                userForm.valid
+                  ? 'Save your entered data'
+                  : 'Disabled until the form data is valid'
+              "
+              [disabled]="!userForm.valid"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>  

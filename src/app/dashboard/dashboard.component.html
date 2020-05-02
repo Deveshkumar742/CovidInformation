@@ -1,0 +1,45 @@
+  <app-portal-header></app-portal-header>
+  <!-- <nav class='navbar navbar-expand navbar-light bg-light'>
+    <ul class='navbar-nav'>
+      <li class='nav-link' style="margin:5px;" ><a class='btn btn-secondary btn-lg' [routerLink]="['/dashboard']" routerLinkActive='active'>Dashboard</a>
+      </li>
+      <li class='nav-link' style="margin:5px;"><a class='btn btn-secondary btn-lg' [routerLink]="['/login']" routerLinkActive='active'>Admin Login</a>
+      </li>
+      <li class='nav-link' style="margin:5px;"><a class='btn btn-secondary btn-lg' [routerLink]="['/latestnews']" routerLinkActive='active'>Latest News</a>
+      </li>
+      <li class='nav-link' style="margin:5px;"><a class='btn btn-secondary btn-lg' [routerLink]="['/precaution']" routerLinkActive='active'>Precautions</a>
+      </li>
+    </ul>
+  </nav> -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-6" style="border: 1px solid #1976d2;;margin-left:20px ; ">
+        <table class="table table-hover" *ngIf="stateData">
+          <thead>
+            <tr>
+              <th class="bold_text">State Name</th>
+              <th class="bold_text">Total Cases</th>
+              <th class="bold_text">Active Cases</th>
+              <th class="bold_text">Recovered Cases</th>
+              <th class="bold_text">Deceased</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let state of stateData">
+              <td>{{ state.stateName  }}</td>
+              <td>{{ state.totalCases  }}</td>
+              <td>{{ state.active }}</td>
+              <td>{{ state.recovered }}</td>
+              <td>{{ state.deceased }}</td>
+              <button class="btn btn-secondary" (click)='SetSelectedState(state)'> Show Details</button>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xs-6" *ngIf="selectedState">
+        <app-districtview [state]="selectedState"></app-districtview>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  <app-portal-footer></app-portal-footer>

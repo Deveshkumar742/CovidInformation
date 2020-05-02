@@ -1,0 +1,14 @@
+<app-portal-header></app-portal-header>
+
+<div class="card-transparent"  >
+  <div class="card-body" style="border: 1px solid #1976d2;;margin-left:20px ; margin-top:20px ;" *ngFor="let news of newsList">
+    <h5 class="card-title">{{ news.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ news.description }}</h6>
+    <p class="card-text">{{ news.summary }}</p>
+    <p class="card-text">{{ news.fullNews }}</p>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<app-portal-footer></app-portal-footer>
